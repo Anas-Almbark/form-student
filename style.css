@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Oswald:wght@200..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main: #eefef4;
+  --second: #00504d;
+}
+body {
+  background-color: var(--main);
+  font-family: "Oswald", sans-serif;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.side-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  min-height: 100vh;
+  background-color: var(--second);
+}
+.side-bar ul {
+  list-style: none;
+}
+.side-bar ul li a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.side-bar ul li a:hover {
+  background-color: var(--main);
+  color: var(--second);
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.box {
+  display: flex;
+  margin: 50px auto;
+  width: 90%;
+  padding: 22px 32px;
+  background-color: #fff;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.17);
+}
+.box .left-box img {
+  width: 500px;
+}
+.box .right-box {
+  width: 100%;
+  padding: 20px 10px;
+}
+.box .right-box .progress ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.box .right-box .progress ul li {
+  position: relative;
+  background-color: #d7f6e2;
+  color: var(--second);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.box .right-box .progress ul li.active {
+  background-color: var(--second);
+  color: var(--main);
+}
+.box .right-box .form .card:not(.active) {
+  display: none;
+}
+.box .right-box .form .card .row {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box .right-box .form .card h3 {
+  color: var(--second);
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+}
+.box .right-box .form .card label {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.box .right-box .form .card label:not(.gender) {
+  margin: 12px 25px;
+  display: block;
+}
+.box .right-box .form .card label.title {
+  margin: 20px 10px 30px 40px;
+}
+.box .right-box .form .card input[type="radio"] {
+  display: none;
+}
+.box .right-box .form .card .gender {
+  display: flex;
+  padding: 10px 14px;
+  margin: 12px 0 0 35px;
+  cursor: pointer;
+}
+.right-box .form .card .gender:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+.right-box .form .card input[type="radio"]:checked + .gender {
+  background-color: var(--second);
+  color: var(--main);
+  border-radius: 4px;
+}
+.box .right-box .form .card input {
+  background-color: #efefef;
+  width: 95%;
+  border: none;
+  outline: none;
+  padding: 14px;
+  border-radius: 22px;
+  color: #000;
+  margin: 0 20px;
+}
+.box .right-box .form .card input:focus {
+  border: 1px solid var(--second);
+}
+.box .right-box .footer {
+  margin: 50px auto 0;
+  width: 75%;
+}
+.box .right-box .footer :where(button, input) {
+  border: none;
+  background-color: var(--second);
+  color: var(--main);
+  padding: 14px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.box .right-box .footer :where(button, input):hover {
+  background: linear-gradient(to bottom, var(--second), #539a6c);
+}
+.box .right-box .footer button {
+  margin: 0 20px 0;
+}
+.box .right-box .footer :where(input, button).disabled {
+  pointer-events: none;
+  cursor: alias;
+  background-color: #eee;
+  color: var(--second);
+}
+
+@media (max-width: 1200px) {
+  .box .right-box .form .card .row {
+    display: block;
+  }
+}
+@media (max-width: 1000px) {
+  .box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .box .right-box .footer {
+    margin: 50px auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .box .right-box .footer :where(button, input) {
+    width: 100%;
+  }
+  .box {
+    padding: 10px;
+  }
+  .box .right-box .form .card .row {
+    width: 100%;
+    margin: 0;
+  }
+  .box .right-box .form .card input {
+    margin: 0 5px;
+  }
+  .box .right-box .form .card label {
+    margin: 20px 10px 20px 20px !important;
+  }
+}
+@media (max-width: 665px) {
+  .box .left-box img {
+    width: 300px;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    flex-direction: column;
+  }
+  .side-bar {
+    width: 100%;
+    min-height: fit-content;
+  }
+  .side-bar ul {
+    display: flex;
+  }
+  .side-bar ul li a {
+    display: flex;
+    margin: 8px;
+  }
+  .box .left-box img {
+    display: none;
+  }
+  .box .right-box .footer button,
+  input {
+    margin: 0 6px;
+  }
+}
